@@ -392,11 +392,7 @@ end
 # Technical report (final term evaluation)
 The following is the final term evaluation report of "General Pipeline for Offline Reinforcement Learning Evaluation Report" in OSPP. Details of all the work that has been done after the mid-term evaluation and some explanation on the current status of the package are given. Some exciting work that is possible based on this project is also given.
 
-## Completed Work
-The following work has been done post mid-term evaluation.
-
-### Summary
-The following is the summary of the project work.
+## Summary
 
 - Polished and finalized the structure of the package. Improved usability by updating the [docs](https://juliareinforcementlearning.org/docs/rldatasets/) accordingly.
 - Fixed the `run` error that was shown in windows.
@@ -404,6 +400,8 @@ The following is the summary of the project work.
 - Added [Deep OPE](https://github.com/google-research/deep_ope)\dcite{DBLP:journals/corr/abs-2103-16596} models for D4RL datasets.
 - Researched and implemented FQE\dcite{DBLP:journals/corr/abs-2007-09055} for which the basic implementation works but there are some flaws that need to be fixed.
 
+## Completed Work
+The following work has been done post mid-term evaluation.
 
 ### Bsuite Datasets
 It involved work similar to RL Unplugged Atari Datasets which involves multi threaded dataloading. It is implemented using a [`Ring Buffer`](https://github.com/JuliaReinforcementLearning/ReinforcementLearning.jl/blob/f1837a93c4c061925d92167c3480a423007dae5c/src/ReinforcementLearningDatasets/src/rl_unplugged/util.jl#L89) for storing and loading batches of data.
@@ -749,17 +747,22 @@ The [implementation](https://github.com/JuliaReinforcementLearning/Reinforcement
 -  optimizer => ADAM(0.005)
 -  loss => Flux.Losses.mse
 -  γ => 0.99
--  batch_size => 256
--  update_freq, update_step => 1
--  tar_update_freq => 256
+-  batch\_size => 256
+-  update\_freq, update\_step => 1
+-  tar\_update\_freq => 256
+-  number of training steps => 40_000
 
 ##### Evaluation Results
+
+The values evaluated by FQE for 100 initial states.
 
 \dfig{body;FQE_Evaluation_Result.png}
 
 mean=-243.0258f0
 
 ##### Actual Values
+
+The values obtained by running the agent in the environemnt for 100 iterations.
 
 \dfig{body;Actual_Evaluation_Result.png}
 
